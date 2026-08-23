@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF ของ Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ตรวจสอบว่าหน้าต่างอยู่ใน iframe หรือไม่
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // เปิดใช้งานการเน้นไวยากรณ์:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js ไม่ได้โหลด!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>โจทย์ #542</h3>
+                            <h2 class="section-title">Voilà</h2>
+                            <p>
+อลิซชอบฟังเพลงมาก น่าเสียดายที่เธอตั้งค่าไฟร์วอลล์ผิดพลาดและทำให้คอลเลกชันเพลงของเธอถูกเผยแพร่สู่สาธารณะบนอินเทอร์เน็ตโดยไม่ตั้งใจ อลิซจัดระเบียบคอลเลกชันส่วนตัวของเธอด้วยวิธีที่ไม่ธรรมดา แทนที่จะจัดเรียงตามแนวเพลง อัลบั้ม หรือศิลปิน เธอเปลี่ยนชื่อเพลงตามจินตนาการของเธอเอง
+<br /><br />
+ดังนั้น เธอจึงมั่นใจว่าคุณจะไม่สามารถค้นหาชื่อเพลงที่เชื่อมโยงกับไฟล์ <code>flag.opus</code> ได้ จงพิสูจน์ให้เธอเห็นว่าเธอคิดผิด
+<br /><br />
+รูปแบบแฟล็กคือ: <code>FCSC{ศิลปิน_ชื่อเพลง}</code> ตัวอย่างเช่น FCSC{ABBA_Gimme! Gimme! Gimme! (A Man After Midnight)} แฟล็กไม่คำนึงถึงตัวพิมพ์เล็ก-ใหญ่
+<br /><br />
+คอลเลกชันเพลงของอลิซเปิดให้บริการที่ <code>localhost:4000</code>
+<br /><br />
+โจทย์นี้ยังมีเวอร์ชันที่ง่ายกว่าให้ลองเล่นด้วย: <a href="https://ctfs.cyrhades.fr/starting/ctf/509" target="blank">Voilà (Baby)</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                ลิงก์ทางการ:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/</a>
+                                <br />
+                                ผู้สร้าง: erdnaxe
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>การเรียนรู้</h3>
+                            <h2 class="section-title">เอกสารและวิดีโอ</h2>
+                            <p class="section-subtitle">
+                                ยังไม่มีเอกสารในขณะนี้
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ความช่วยเหลือ</h3>
+                            <h2 class="section-title">คำแนะนำและคำใบ้</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">เธรดบน
+                                    Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="เลื่อนขึ้นด้านบน" title="กลับไปด้านบนสุด"></a>
+    </div>
+</body>
+
+</html>

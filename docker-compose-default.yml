@@ -1,0 +1,29 @@
+services:
+  voila:
+    image: anssi/fcsc2025-misc-voila:latest
+    ports:
+      - "4000:4000"
+services:
+  webssh.cyrhades.fr:
+    build: ./.docker/webssh
+    ports:
+      - ${PORT}:8888
+  ssh-517.cyrhades.fr:
+    container_name: ssh-517
+    build:
+      context: ./.docker/ssh
+      args:
+        LANGUAGE: ${LANGUAGE:-fr}
+    labels:
+      ho.ctf.cyrhades: "challenge"
+      ho.ctf.cyrhades.webssh: "1"
+    environment:
+      SSH_HOSTNAME: "ssh-517.cyrhades.fr"
+      SSH_PORT: 22
+      SSH_USERNAME: "cyrhades"
+      SSH_PASSWORD: "secret"
+    restart: unless-stopped 
+  voila.cyrhades.fr:
+    image: anssi/fcsc2025-misc-voila:latest
+    ports:
+      - ${PORT_SSH}:4000

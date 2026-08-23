@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF от Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Проверяет, находится ли окно во фрейме iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Включает подсветку синтаксиса:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js не загружен!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Челлендж #542</h3>
+                            <h2 class="section-title">Voilà</h2>
+                            <p>
+Алиса обожает слушать музыку. К сожалению, она неправильно настроила брандмауэр и случайно открыла доступ к своей музыкальной коллекции в Интернете. Алиса организует свою личную коллекцию необычным способом: вместо сортировки по жанрам, альбомам или исполнителям она переименовывает треки в соответствии со своей фантазией.
+<br /><br />
+Поэтому она уверена, что вы не сможете найти название песни, связанной с файлом <code>flag.opus</code>. Докажите ей обратное.
+<br /><br />
+Формат флага: <code>FCSC{Артист_Трек}</code>. Например: FCSC{ABBA_Gimme! Gimme! Gimme! (A Man After Midnight)} . Флаг нечувствителен к регистру.
+<br /><br />
+Музыкальная коллекция Алисы доступна на <code>localhost:4000</code>.
+<br /><br />
+Это задание также представлено в более простой версии: <a href="https://ctfs.cyrhades.fr/starting/ctf/509" target="blank">Voilà (Baby)</a>.
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Официальная ссылка:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/</a>
+                                <br />
+                                Автор: erdnaxe
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Обучение</h3>
+                            <h2 class="section-title">Документация и видео</h2>
+                            <p class="section-subtitle">
+                                В настоящее время документация отсутствует
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Помощь</h3>
+                            <h2 class="section-title">Советы и подсказки</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Ветка
+                                    в Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Прокрутить наверх" title="Вернуться в начало"></a>
+    </div>
+</body>
+
+</html>

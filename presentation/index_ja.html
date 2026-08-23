@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CyrhadesのCTF</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ウィンドウがiframe内にあるか確認
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // シンタックスハイライトを有効化:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js が読み込まれていません！");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>チャレンジ #542</h3>
+                            <h2 class="section-title">Voilà</h2>
+                            <p>
+アリスは音楽を聴くのが大好きです。残念ながら、彼女はファイアウォールの設定を誤り、意図せず自分の音楽コレクションをインターネット上に公開してしまいました。アリスは型破りな方法で個人のコレクションを整理しています。ジャンルやアルバム、アーティストごとに分類するのではなく、想像力のおもむくままに曲名を変更しています。
+<br /><br />
+そのため、彼女はあなたが <code>flag.opus</code> ファイルに関連付けられた曲名を見つけることはできないと確信しています。彼女にそれが可能であることを証明してください。
+<br /><br />
+フラグの形式は <code>FCSC{Artist_Track}</code> です。例: FCSC{ABBA_Gimme! Gimme! Gimme! (A Man After Midnight)} 。フラグは大文字と小文字を区別しません。
+<br /><br />
+アリスの音楽コレクションは <code>localhost:4000</code> で公開されています。
+<br /><br />
+このチャレンジには、より簡単なバージョンも用意されています: <a href="https://ctfs.cyrhades.fr/starting/ctf/509" target="blank">Voilà (Baby)</a>。
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                公式リンク:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/</a>
+                                <br />
+                                作成者: erdnaxe
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>学習</h3>
+                            <h2 class="section-title">ドキュメントと動画</h2>
+                            <p class="section-subtitle">
+                                現在利用可能なドキュメントはありません
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ヘルプ</h3>
+                            <h2 class="section-title">ヒントとアドバイス</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discordスレッド</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="トップに戻る" title="ページの先頭へ"></a>
+    </div>
+</body>
+
+</html>

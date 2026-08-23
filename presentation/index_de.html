@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Die CTFs von Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Überprüft, ob sich das Fenster in einem Iframe befindet
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Syntax-Highlighting aktivieren:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js nicht geladen!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #542</h3>
+                            <h2 class="section-title">Voilà</h2>
+                            <p>
+Alice liebt es, Musik zu hören. Leider hat sie ihre Firewall falsch konfiguriert und ihre Musiksammlung unbeabsichtigt im Internet freigegeben. Alice ordnet ihre persönliche Sammlung auf unkonventionelle Weise: Anstatt nach Genres, Alben oder Künstlern zu sortieren, benennt sie ihre Musik nach ihrer Fantasie um.
+<br /><br />
+Daher ist sie sich sicher, dass Sie den Titel des Liedes, das der Datei <code>flag.opus</code> zugeordnet ist, nicht finden können. Beweisen Sie ihr das Gegenteil.
+<br /><br />
+Das Flag-Format ist: <code>FCSC{Künstler_Titel}</code>. Zum Beispiel FCSC{ABBA_Gimme! Gimme! Gimme! (A Man After Midnight)} . Bei dem Flag wird nicht zwischen Groß- und Kleinschreibung unterschieden.
+<br /><br />
+Alices Musiksammlung ist unter <code>localhost:4000</code> erreichbar.
+<br /><br />
+Diese Aufgabe gibt es auch in einer einfacheren Version: <a href="https://ctfs.cyrhades.fr/starting/ctf/509" target="blank">Voilà (Baby)</a>.
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Offizieller Link:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/">https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-voila-2/</a>
+                                <br />
+                                Autor: erdnaxe
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Lernen</h3>
+                            <h2 class="section-title">Dokumentation und Videos</h2>
+                            <p class="section-subtitle">
+                                Zurzeit keine Dokumentation verfügbar
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Hilfe</h3>
+                            <h2 class="section-title">Tipps und Hinweise</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discord-Thread</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Nach oben scrollen" title="Zurück nach oben"></a>
+    </div>
+</body>
+
+</html>
